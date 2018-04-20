@@ -23,7 +23,7 @@ public class FilesApp {
 
         //String encodedText = readFile("C:\\Users\\mv.savenkov\\Desktop\\encoded.txt", StandardCharsets.UTF_8);
         //File encodedfile = new File("C:\\Users\\mv.savenkov\\Desktop\\CountCharactersInEncodedFile.txt");
-        //File f1 = new File("../AnalyseData/ResultCountCombination.txt");
+        File f1 = new File("../AnalyseData/ResultCountCombination.txt");
 
         countCharacters(text, file);
         //countCharacters(encodedText, encodedfile);
