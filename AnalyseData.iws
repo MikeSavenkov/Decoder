@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3de96974-02be-4492-8adc-3741a5556dc4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CountEncoded.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AnalyseData.ipr" afterPath="$PROJECT_DIR$/AnalyseData.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AnalyseData.iws" afterPath="$PROJECT_DIR$/AnalyseData.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FilesApp.java" afterPath="$PROJECT_DIR$/src/FilesApp.java" />
     </list>
     <ignored path="AnalyseData.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,15 +27,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FilesApp.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FilesApp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FilesApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3">
-              <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+            <state relative-caret-position="364">
+              <caret line="273" column="51" lean-forward="false" selection-start-line="273" selection-start-column="51" selection-end-line="273" selection-end-column="51" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+                <element signature="e#1440#1448#0" expanded="true" />
+                <element signature="e#1513#1521#0" expanded="true" />
+                <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+                <element signature="e#4818#4835#0" expanded="true" />
+                <element signature="e#9795#9812#0" expanded="true" />
+                <element signature="e#10109#10126#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -41,18 +50,38 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="378">
+              <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AnalyseData.iws" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AnalyseData.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AnalyseData.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnalyseData.ipr" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AnalyseData.ipr">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="651">
+              <caret line="31" column="54" lean-forward="false" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnalyseData.iws" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AnalyseData.iws">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="50" lean-forward="false" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
+            <state relative-caret-position="357">
+              <caret line="17" column="47" lean-forward="false" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -81,9 +110,10 @@
         <option value="$PROJECT_DIR$/src/main.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/DocReader.java" />
+        <option value="$PROJECT_DIR$/src/CountEncoded.java" />
         <option value="$PROJECT_DIR$/src/FilesApp.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/AnalyseData.iws" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -93,11 +123,17 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1928" />
-    <option name="y" value="-155" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -126,14 +162,18 @@
               <item name="AnalyseData" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="AnalyseData" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -649,28 +689,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-155" width="1936" height="1056" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32743362" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2588889" sideWeight="0.50537056" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2588889" sideWeight="0.49462944" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5048335" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9988889" sideWeight="0.49462944" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3280543" sideWeight="0.49516648" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15520945" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23147154" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20515575" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26222223" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30995476" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -678,6 +717,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32659933" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -723,15 +763,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/FilesApp.java</url>
-          <line>128</line>
-          <properties />
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="72" />
+      <option name="time" value="92" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -748,6 +780,46 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41832">
+          <caret line="2065" column="18" lean-forward="false" selection-start-line="2065" selection-start-column="18" selection-end-line="2065" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CountEncoded.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FilesApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -760,6 +832,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -772,6 +850,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -784,6 +868,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -796,6 +886,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -808,6 +904,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -820,6 +922,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -832,6 +940,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -844,6 +958,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -857,6 +977,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -870,6 +996,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -883,6 +1015,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -895,6 +1033,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -907,6 +1051,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -919,6 +1069,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -931,6 +1087,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -943,6 +1105,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -955,6 +1123,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -967,6 +1141,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -979,6 +1159,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -991,6 +1177,12 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1001,47 +1193,54 @@
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip!/java/lang/Integer.java" />
     <entry file="uml://JAVA/FilesApp" />
     <entry file="file://$PROJECT_DIR$/5.txt" />
-    <entry file="file://$PROJECT_DIR$/allTexts.txt">
+    <entry file="file://$PROJECT_DIR$/allTexts.txt" />
+    <entry file="file://$PROJECT_DIR$/ResultCountCombination.txt" />
+    <entry file="file://$PROJECT_DIR$/ResultCountCharacters.txt" />
+    <entry file="file://$PROJECT_DIR$/C_/SomeDir/notes3.txt" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/function/Consumer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="182">
+          <caret line="41" column="26" lean-forward="false" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="2065" column="18" lean-forward="false" selection-start-line="2065" selection-start-column="18" selection-end-line="2065" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ResultCountCombination.txt">
+    <entry file="file://$PROJECT_DIR$/src/CountEncoded.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="273">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ResultCountCharacters.txt">
+    <entry file="file://$PROJECT_DIR$/AnalyseData.iws">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="357">
+          <caret line="17" column="47" lean-forward="false" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/C_/SomeDir/notes3.txt">
+    <entry file="file://$PROJECT_DIR$/AnalyseData.ipr">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" lean-forward="true" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+        <state relative-caret-position="651">
+          <caret line="31" column="54" lean-forward="false" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FilesApp.java">
+    <entry file="file://$PROJECT_DIR$/AnalyseData.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="231">
+          <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1053,35 +1252,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AnalyseData.ipr">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="378">
+          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AnalyseData.iml">
+    <entry file="file://$PROJECT_DIR$/src/FilesApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AnalyseData.iws">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="50" lean-forward="false" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
-          <folding />
+        <state relative-caret-position="364">
+          <caret line="273" column="51" lean-forward="false" selection-start-line="273" selection-start-column="51" selection-end-line="273" selection-end-column="51" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#countCombination#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#1440#1448#0" expanded="true" />
+            <element signature="e#1513#1521#0" expanded="true" />
+            <element signature="method#countCharactersInEncodedFile#0;class#FilesApp#0" expanded="false" />
+            <element signature="e#4818#4835#0" expanded="true" />
+            <element signature="e#9795#9812#0" expanded="true" />
+            <element signature="e#10109#10126#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

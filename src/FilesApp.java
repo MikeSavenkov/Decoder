@@ -3,6 +3,7 @@
  */
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.nio.charset.Charset;
@@ -18,13 +19,16 @@ public class FilesApp {
 
 
         String text = readFile("C:\\Users\\mv.savenkov\\Desktop\\allTexts.txt", StandardCharsets.UTF_8);
+        File file = new File("C:\\Users\\mv.savenkov\\Desktop\\ResultCountCharacters.txt");
 
-        File f = new File("C:\\Users\\mv.savenkov\\Desktop\\ResultCountCharacters.txt");
+        //String encodedText = readFile("C:\\Users\\mv.savenkov\\Desktop\\encoded.txt", StandardCharsets.UTF_8);
+        //File encodedfile = new File("C:\\Users\\mv.savenkov\\Desktop\\CountCharactersInEncodedFile.txt");
         //File f1 = new File("../AnalyseData/ResultCountCombination.txt");
 
-            countCharacters(text, f);
-
-            //countCombination(text, f1);
+        countCharacters(text, file);
+        //countCharacters(encodedText, encodedfile);
+        //countCharactersInEncodedFile(encodedText, encodedfile);
+        //countCombination(text, f1);
 
 
             }
@@ -101,8 +105,55 @@ public class FilesApp {
 
     }
 
-    public static String countCharacters(String text, File f) throws IOException {
+    public static void countCharactersInEncodedFile(String encodedText, File encodedFile) {
 
+        HashMap<Character, Long> unsortMap = new HashMap<>();
+
+        try {
+            if (!encodedFile.exists()) {
+                encodedFile.createNewFile();
+            }
+            PrintWriter pw = new PrintWriter(encodedFile.getAbsoluteFile());
+            long count = 0, textSize = 0;
+            for (int j = 1040; j < 1072; j++) {
+
+                count = frequency(String.valueOf((char) j), encodedText) + frequency(String.valueOf((char) (j + 32)), encodedText);
+                textSize = textSize  + count;
+            }
+
+            for (int i = 1040; i < 1072; i++) {
+                char symbol = (char) i;
+                count = frequency(String.valueOf((char) i), encodedText) + frequency(String.valueOf((char) (i + 32)), encodedText);
+                unsortMap.put(symbol, count);
+
+            }
+            final Map<Character, Long> sortMap = new LinkedHashMap<>();
+            unsortMap.entrySet().stream()
+                     .sorted(Map.Entry.<Character, Long>comparingByValue().reversed())
+                     .forEachOrdered(x -> sortMap.put(x.getKey(), x.getValue()));
+
+            for (Map.Entry<Character, Long> entry: sortMap.entrySet()) {
+                pw.println(entry.getKey() + ": " + entry.getValue());
+            }
+        }
+
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
+    }
+
+
+
+
+    public static void countCharacters(String text, File f) throws IOException {
+
+        String encodedText = readFile("C:\\Users\\mv.savenkov\\Desktop\\encoded.txt", StandardCharsets.UTF_8);
+        //File encodedfile = new File("C:\\Users\\mv.savenkov\\Desktop\\CountCharactersInEncodedFile.txt");
+
+        HashMap<Character, Long> unsortMap = new HashMap<>();
+        HashMap<Character, Long> unsortMapEncoded = new HashMap<>();
 
 
         try {
@@ -120,20 +171,30 @@ public class FilesApp {
                 pw.println("\n" + "№     Буква   Абс.частота    Доля        Доля с пробелом    ");
 
                 int countSpace = frequency(" ", text);
+
                 //long textSize = text.length();
                 //long textSizeWithoutSpaces = textSize - countSpace;
 
                 float countIndex, countIndexSpace, index = 0, indexSpace = 0;
-                long count = 0, textSizeWithoutSpaces2 = 0;
+                long count = 0, countInEncoded = 0;
+                long textSizeWithoutSpaces2 = 0, textSizeInEncoded = 0;
 
                 for (int j = 1040; j < 1072; j++) {
 
-                    char symbol = (char) j;
+                    //char symbol = (char) j;
                     count = frequency(String.valueOf((char) j), text) + frequency(String.valueOf((char) (j + 32)), text);
                     textSizeWithoutSpaces2 = textSizeWithoutSpaces2  + count;
                 }
 
+                for (int j = 1040; j < 1072; j++) {
+
+                    //char symbol = (char) j;
+                    countInEncoded = frequency(String.valueOf((char) j), encodedText) + frequency(String.valueOf((char) (j + 32)), encodedText);
+                    textSizeInEncoded = textSizeInEncoded  + countInEncoded;
+                }
+
                 count = 0;
+                countInEncoded = 0;
                 long textSizeWithSpaces2 = textSizeWithoutSpaces2 + countSpace;
 
                 int numberCharacter = 0;
@@ -144,9 +205,9 @@ public class FilesApp {
 
                     char symbol = (char) i;
                     count = frequency(String.valueOf((char) i), text) + frequency(String.valueOf((char) (i + 32)), text);
-
-                    //count1 = count1  + count;
-
+                    countInEncoded = frequency(String.valueOf((char) i), encodedText) + frequency(String.valueOf((char) (i + 32)), encodedText);
+                    unsortMap.put(symbol, count);
+                    unsortMapEncoded.put(symbol, countInEncoded);
 
                     double probability = new BigDecimal((double) count / (textSizeWithoutSpaces2)).setScale(4, RoundingMode.UP).doubleValue();
                     double probabilityPlusSpace = new BigDecimal((double) count / (textSizeWithSpaces2)).setScale(4, RoundingMode.UP).doubleValue();
@@ -178,10 +239,51 @@ public class FilesApp {
                 pw.println("Индекс совпадения без пробелов   " + new BigDecimal(index).setScale(4, RoundingMode.UP).doubleValue());
                 pw.println("Индекс совпадения с пробелами    " + new BigDecimal(indexSpace).setScale(5, RoundingMode.UP).doubleValue());
 
+                final Map<Character, Long> sortMap = new LinkedHashMap<>();
+                unsortMap.entrySet().stream()
+                         .sorted(Map.Entry.<Character, Long>comparingByValue().reversed())
+                         .forEachOrdered(x -> sortMap.put(x.getKey(), x.getValue()));
+
+                final Map<Character, Long> sortMapEncoded = new LinkedHashMap<>();
+                unsortMapEncoded.entrySet().stream()
+                         .sorted(Map.Entry.<Character, Long>comparingByValue().reversed())
+                         .forEachOrdered(x -> sortMapEncoded.put(x.getKey(), x.getValue()));
+
+                List<Character> charsEncoded = new ArrayList<>();
+                for (Character key: sortMapEncoded.keySet()) {
+                    charsEncoded.add(key);;
+                }
+
+                List<Character> chars = new ArrayList<>();
+                for (Character key: sortMap.keySet()) {
+                    chars.add(key);
+                }
+                System.out.println(charsEncoded);
+                System.out.println(chars);
+
+//                for (Character key: sortMapEncoded.keySet())
+//                    System.out.println(sortMapEncoded.get(key));
+                StringBuilder string = new StringBuilder("ВВВФЫККК");
+                String str = null;
+                String temp = null;
+                System.out.println(encodedText);
+                System.out.println();
+                for (int j = 0; j < string.length(); j++) {
 
 
+//                    str = string.replace(j, j, );
+                    temp = str;
+                }
+                System.out.println(str);
 
+                for (Map.Entry<Character, Long> entry: sortMap.entrySet()) {
+                    pw.println(entry.getKey() + ": " + entry.getValue());
+                }
 
+                pw.println();
+                for (Map.Entry<Character, Long> entry: sortMapEncoded.entrySet()) {
+                    pw.println(entry.getKey() + ": " + entry.getValue());
+                }
 
 
             }
@@ -191,10 +293,6 @@ public class FilesApp {
         } catch(IOException e) {
             throw new RuntimeException();
         }
-
-
-
-        return " ";
     }
 
 
