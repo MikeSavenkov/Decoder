@@ -163,7 +163,8 @@ public class FilesApp {
 
                 pw.println("\n" + "№     Буква   Абс.частота    Доля        Доля с пробелом    ");
 
-                int countSpace = frequency(" ", textUpperCase);
+                long countSpace = frequency(" ", textUpperCase);
+                long countComma = frequency(",", encodedText);
 
                 float countIndex, countIndexSpace, index = 0, indexSpace = 0;
                 long count = 0, countInEncoded = 0;
@@ -185,6 +186,9 @@ public class FilesApp {
 
                 }
 
+
+                unsortMap.put(' ', countSpace);
+                unsortMapEncoded.put(',', countComma);
                 count = 0;
                 countInEncoded = 0;
 
@@ -244,17 +248,17 @@ public class FilesApp {
 
                 List<Character> charsEncoded = new ArrayList<>();
                 for (Character key: sortMapEncoded.keySet()) {
-                    charsEncoded.add(key);;
+                    charsEncoded.add(key);
                 }
 
                 List<Character> chars = new ArrayList<>();
                 for (Character key: sortMap.keySet()) {
                     chars.add(key);
                 }
-                System.out.println("сортировка букв в порядке убывания по частоте в зашифрованном тексте:");
-                System.out.println(charsEncoded);
                 System.out.println("сортировка букв в порядке убывания по частоте в обычном тексте:");
                 System.out.println(chars);
+                System.out.println("сортировка букв в порядке убывания по частоте в зашифрованном тексте:");
+                System.out.println(charsEncoded);
                 System.out.println();
                 
                 System.out.println(encodedText);
