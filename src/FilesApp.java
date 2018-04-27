@@ -261,17 +261,34 @@ public class FilesApp {
                 System.out.println(charsEncoded);
                 System.out.println();
                 
-                System.out.println(encodedText);
-                String string = null;
-                for (int j = 0; j < 32; j++) {
+//                System.out.println(encodedText);
+//                String string = null;
+//                for (int j = 0; j < 32; j++) {
+//
+//                    string = encodedText.replace(charsEncoded.get(j), chars.get(j));
+//                    encodedText = string;
+//
+//                }
+//                System.out.println();
+//                String decodedText = encodedText;
+//                System.out.println(decodedText);
 
-                    string = encodedText.replace(charsEncoded.get(j), chars.get(j));
-                    encodedText = string;
 
+                char[] charArray = encodedText.toCharArray();
+                for (int k = 0; k < charArray.length; k++) {
+                    for (int l = 0; l < chars.size(); l++) {
+                        if (charArray[k] == charsEncoded.get(l)) {
+                            charArray[k] = chars.get(l);
+                            break;
+                        }
+                    }
                 }
+
+                System.out.println(encodedText);
                 System.out.println();
-                String decodedText = encodedText;
-                System.out.println(decodedText);
+                String decoded = new String(charArray);
+                System.out.println(decoded);
+
 
                 for (Map.Entry<Character, Long> entry: sortMap.entrySet()) {
                     pw.println(entry.getKey() + ": " + entry.getValue());
