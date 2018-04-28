@@ -273,12 +273,15 @@ public class FilesApp {
 //                String decodedText = encodedText;
 //                System.out.println(decodedText);
 
+//	              char temp = charsEncoded.get(0);
+//	              charsEncoded.set(0, charsEncoded.get(1));
+//	              charsEncoded.set(1, temp);
 
                 char[] charArray = encodedText.toCharArray();
                 for (int k = 0; k < charArray.length; k++) {
-                    for (int l = 0; l < chars.size(); l++) {
-                        if (charArray[k] == charsEncoded.get(l)) {
-                            charArray[k] = chars.get(l);
+                    for (int m = 0; m < chars.size(); m++) {
+                        if (charArray[k] == charsEncoded.get(m)) {
+                            charArray[k] = chars.get(m);
                             break;
                         }
                     }
@@ -288,6 +291,20 @@ public class FilesApp {
                 System.out.println();
                 String decoded = new String(charArray);
                 System.out.println(decoded);
+
+                //обратная расшифровка
+                char[] charArray2 = decoded.toCharArray();
+                for (int k = 0; k < charArray2.length; k++) {
+                    for (int m = 0; m < chars.size(); m++) {
+                        if (charArray2[k] == chars.get(m)) {
+                            charArray2[k] = charsEncoded.get(m);
+                            break;
+                        }
+                    }
+                }
+                System.out.println();
+                String encoded2 = new String(charArray2);
+                System.out.println(encoded2);
 
 
                 for (Map.Entry<Character, Long> entry: sortMap.entrySet()) {
