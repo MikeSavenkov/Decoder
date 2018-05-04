@@ -25,141 +25,83 @@ public class FilesApp {
         //File encodedfile = new File("C:\\Users\\mv.savenkov\\Desktop\\CountCharactersInEncodedFile.txt");
         //countCharactersInEncodedFile(encodedText, encodedfile);
 
-        //File f1 = new File("../AnalyseData/ResultCountCombination.txt");
+        File f1 = new File("C:\\Users\\mv.savenkov\\Desktop\\ResultCountCombination.txt");
 
-        //countCombination(text, f1);
+        countCombination(text, f1);
 
     }
 
 
 
-    public static String countCombination(String text, File f1) throws IOException {
+    private static void countCombination(String text, File f1) throws IOException {
 
         try {
 
-            if(!f1.exists()){
-
-                f1.createNewFile();
-
-            }
-
+            String textUpperCase = text.toUpperCase();
             PrintWriter pw = new PrintWriter(f1.getAbsoluteFile());
+            List<String> doubleCharacters = new ArrayList<>();
+            Map<String, Integer> mapDoubleCharacters = new HashMap<>();
 
-            try {
+            pw.println("\n" + "№      сочетание    Абс. частота");
 
-        ArrayList<String> doubleCharacters = new ArrayList<String>();
-        ArrayList<String> bigDoubleCharacters = new ArrayList<String>();
+            int number = 1;
+            int k = -1;
+            for (int i = 1040; i < 1072; i++) {
 
+                for (int j = 1040; j < 1072; j++) {
 
-        pw.println("\n" + "№      сочетание    Абс. частота");
+                    String doubleCharacter = (char) i + "" + (char) j;
+                    doubleCharacters.add(doubleCharacter);
+                    k++;
+                    mapDoubleCharacters.put(doubleCharacter, frequency(doubleCharacters.get(k), textUpperCase));
 
-        int numberCombination = 1;
-        int k;
-        for (int i = 1072; i < 1104; i++){
-            for (int j = 1072; j < 1104; j++) {
-                for (k = 0; k < doubleCharacters.size() ; k++) {
+                    if (frequency(doubleCharacters.get(k), textUpperCase) != 0) {
 
-                }
-
-                String bigDoubleCharacter = (char)(i-32) + "" + (char)j;
-                String doubleCharacter = (char)i + "" + (char)j;
-
-                doubleCharacters.add(doubleCharacter);
-                bigDoubleCharacters.add(bigDoubleCharacter);
-
-                if (((frequency(doubleCharacters.get(k), text) != 0) & (frequency(bigDoubleCharacters.get(k), text) != 0)) |
-                   ((frequency(doubleCharacters.get(k), text) == 0) & (frequency(bigDoubleCharacters.get(k), text) != 0)) |
-                   ((frequency(doubleCharacters.get(k), text) != 0) & (frequency(bigDoubleCharacters.get(k), text) == 0))){
-
-                    if (numberCombination > 9 & numberCombination < 100){
-                        pw.println(numberCombination + "   |  " + doubleCharacters.get(k) + "        |  " + (frequency(doubleCharacters.get(k), text) + frequency(bigDoubleCharacters.get(k), text)));
+                        if (number > 9 & number < 100)
+                        {
+                            pw.println(number + "   |  " + doubleCharacters.get(k) + "        |  " +
+                                               (frequency(doubleCharacters.get(k), textUpperCase)));
+                        }
+                        else if (number > 99 & number < 999)
+                        {
+                            pw.println(number + "  |  " + doubleCharacters.get(k) + "        |  " +
+                                               (frequency(doubleCharacters.get(k), textUpperCase)));
+                        }
+                        else
+                        {
+                            pw.println(number + "    |  " + doubleCharacters.get(k) + "        |  " +
+                                               (frequency(doubleCharacters.get(k), textUpperCase)));
+                        }
+                        number++;
                     }
-                    else if (numberCombination > 99 & numberCombination < 999){
-                        pw.println(numberCombination + "  |  " + doubleCharacters.get(k) + "        |  " + (frequency(doubleCharacters.get(k), text) + frequency(bigDoubleCharacters.get(k), text)));
-                    }
-                    else {
-                        pw.println(numberCombination + "    |  " + doubleCharacters.get(k) + "        |  " + (frequency(doubleCharacters.get(k), text) + frequency(bigDoubleCharacters.get(k), text)));
-                    }
-                    numberCombination++;
-                }
-
-                else if ((frequency(doubleCharacters.get(k), text) == 0) & (frequency(bigDoubleCharacters.get(k), text) == 0)){
-                    continue;
                 }
             }
+
+            final Map<String, Integer> sortMapDoubleCharacters = new LinkedHashMap<>();
+            mapDoubleCharacters.entrySet().stream()
+                     .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                     .forEachOrdered(x -> sortMapDoubleCharacters.put(x.getKey(), x.getValue()));
+            System.out.println(sortMapDoubleCharacters);
 
         }
-            }
-            finally {
-                pw.close();
-            }
-        }
-        catch(IOException e) {
+        catch (IOException e) {
             throw new RuntimeException();
         }
-
-
-        return " ";
-
     }
 
-    public static void countCharactersInEncodedFile(String encodedText, File encodedFile) {
-
-        HashMap<Character, Long> unsortMap = new HashMap<>();
-
-        try {
-            if (!encodedFile.exists()) {
-                encodedFile.createNewFile();
-            }
-            PrintWriter pw = new PrintWriter(encodedFile.getAbsoluteFile());
-            long count = 0, textSize = 0;
-            for (int j = 1040; j < 1072; j++) {
-
-                count = frequency(String.valueOf((char) j), encodedText) + frequency(String.valueOf((char) (j + 32)), encodedText);
-                textSize = textSize  + count;
-            }
-
-            for (int i = 1040; i < 1072; i++) {
-                char symbol = (char) i;
-                count = frequency(String.valueOf((char) i), encodedText) + frequency(String.valueOf((char) (i + 32)), encodedText);
-                unsortMap.put(symbol, count);
-
-            }
-            final Map<Character, Long> sortMap = new LinkedHashMap<>();
-            unsortMap.entrySet().stream()
-                     .sorted(Map.Entry.<Character, Long>comparingByValue().reversed())
-                     .forEachOrdered(x -> sortMap.put(x.getKey(), x.getValue()));
-
-            for (Map.Entry<Character, Long> entry: sortMap.entrySet()) {
-                pw.println(entry.getKey() + ": " + entry.getValue());
-            }
-        }
-
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-
-    }
-
-
-
-
-    public static void countCharacters(String text, File file) throws IOException {
+    private static void countCharacters(String text, File file) throws IOException {
 
         String encodedText = readFile("C:\\Users\\mv.savenkov\\Desktop\\encoded.txt", StandardCharsets.UTF_8);
         //File encodedfile = new File("C:\\Users\\mv.savenkov\\Desktop\\CountCharactersInEncodedFile.txt");
 
-        HashMap<Character, Long> unsortMap = new HashMap<>();
-        HashMap<Character, Long> unsortMapEncoded = new HashMap<>();
-
+        Map<Character, Long> unsortMap = new HashMap<>();
+        Map<Character, Long> unsortMapEncoded = new HashMap<>();
         String textUpperCase = text.toUpperCase();
 
-        try {
-
-            PrintWriter pw = new PrintWriter(file.getAbsoluteFile());
 
             try {
+
+                PrintWriter pw = new PrintWriter(file.getAbsoluteFile());
 
                 pw.println("\n" + "№     Буква   Абс.частота    Доля        Доля с пробелом    ");
 
@@ -255,6 +197,14 @@ public class FilesApp {
                 for (Character key: sortMap.keySet()) {
                     chars.add(key);
                 }
+
+//                char temp = charsEncoded.get(0);
+//                charsEncoded.set(0, charsEncoded.get(2));
+//                charsEncoded.set(2, temp);
+//                char temp2 = charsEncoded.get(1);
+//                charsEncoded.set(1, charsEncoded.get(2));
+//                charsEncoded.set(2, temp2);
+
                 System.out.println("сортировка букв в порядке убывания по частоте в обычном тексте:");
                 System.out.println(chars);
                 System.out.println("сортировка букв в порядке убывания по частоте в зашифрованном тексте:");
@@ -273,10 +223,6 @@ public class FilesApp {
 //                String decodedText = encodedText;
 //                System.out.println(decodedText);
 
-//	              char temp = charsEncoded.get(0);
-//	              charsEncoded.set(0, charsEncoded.get(1));
-//	              charsEncoded.set(1, temp);
-
                 char[] charArray = encodedText.toCharArray();
                 for (int k = 0; k < charArray.length; k++) {
                     for (int m = 0; m < chars.size(); m++) {
@@ -292,7 +238,7 @@ public class FilesApp {
                 String decoded = new String(charArray);
                 System.out.println(decoded);
 
-                //обратная расшифровка
+                //обратная дешифровка
                 char[] charArray2 = decoded.toCharArray();
                 for (int k = 0; k < charArray2.length; k++) {
                     for (int m = 0; m < chars.size(); m++) {
@@ -318,16 +264,11 @@ public class FilesApp {
 
 
             }
-            finally {
-                pw.close();
+            catch(IOException e) {
+                throw new RuntimeException();
             }
-        } catch(IOException e) {
-            throw new RuntimeException();
-        }
+
     }
-
-
-
 
 
     private static int frequency(String symbol, String file) {
