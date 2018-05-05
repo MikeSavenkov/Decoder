@@ -35,58 +35,76 @@ public class FilesApp {
 
     private static void countCombination(String text, File f1) throws IOException {
 
-        try {
+        String encodedText = readFile("C:\\Users\\mv.savenkov\\Desktop\\encoded.txt", StandardCharsets.UTF_8);
+        String textUpperCase = text.toUpperCase();
 
-            String textUpperCase = text.toUpperCase();
-            PrintWriter pw = new PrintWriter(f1.getAbsoluteFile());
-            List<String> doubleCharacters = new ArrayList<>();
-            Map<String, Integer> mapDoubleCharacters = new HashMap<>();
+        PrintWriter pw = new PrintWriter(f1.getAbsoluteFile());
 
-            pw.println("\n" + "№      сочетание    Абс. частота");
+        List<String> doubleCharacters = new ArrayList<>();
 
-            int number = 1;
-            int k = -1;
-            for (int i = 1040; i < 1072; i++) {
+        Map<String, Integer> mapDoubleCharacters = new HashMap<>();
+        Map<String, Integer> encodedMapDoubleCharacters = new HashMap<>();
 
-                for (int j = 1040; j < 1072; j++) {
+        pw.println("\n" + "№      сочетание    Абс. частота");
 
-                    String doubleCharacter = (char) i + "" + (char) j;
-                    doubleCharacters.add(doubleCharacter);
-                    k++;
+        int number = 1;
+        int k = -1;
+        for (int i = 1040; i < 1072; i++) {
+
+            for (int j = 1040; j < 1072; j++) {
+
+                String doubleCharacter = (char) i + "" + (char) j;
+                doubleCharacters.add(doubleCharacter);
+                k++;
+
+                if (frequency(doubleCharacters.get(k), encodedText) != 0) {
+
+                    encodedMapDoubleCharacters.put(doubleCharacter, frequency(doubleCharacters.get(k), encodedText));
+
+                }
+
+                if (frequency(doubleCharacters.get(k), textUpperCase) != 0) {
+
                     mapDoubleCharacters.put(doubleCharacter, frequency(doubleCharacters.get(k), textUpperCase));
-
-                    if (frequency(doubleCharacters.get(k), textUpperCase) != 0) {
-
-                        if (number > 9 & number < 100)
-                        {
-                            pw.println(number + "   |  " + doubleCharacters.get(k) + "        |  " +
-                                               (frequency(doubleCharacters.get(k), textUpperCase)));
-                        }
-                        else if (number > 99 & number < 999)
-                        {
-                            pw.println(number + "  |  " + doubleCharacters.get(k) + "        |  " +
-                                               (frequency(doubleCharacters.get(k), textUpperCase)));
-                        }
-                        else
-                        {
-                            pw.println(number + "    |  " + doubleCharacters.get(k) + "        |  " +
-                                               (frequency(doubleCharacters.get(k), textUpperCase)));
-                        }
-                        number++;
+                    if (number > 9 & number < 100) {
+                        pw.println(number + "   |  " + doubleCharacters.get(k) + "        |  " +
+                                           (frequency(doubleCharacters.get(k), textUpperCase)));
                     }
+                    else if (number > 99 & number < 999) {
+                        pw.println(number + "  |  " + doubleCharacters.get(k) + "        |  " +
+                                           (frequency(doubleCharacters.get(k), textUpperCase)));
+                    }
+                    else {
+                        pw.println(number + "    |  " + doubleCharacters.get(k) + "        |  " +
+                                           (frequency(doubleCharacters.get(k), textUpperCase)));
+                    }
+                    number++;
                 }
             }
-
-            final Map<String, Integer> sortMapDoubleCharacters = new LinkedHashMap<>();
-            mapDoubleCharacters.entrySet().stream()
-                     .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
-                     .forEachOrdered(x -> sortMapDoubleCharacters.put(x.getKey(), x.getValue()));
-            System.out.println(sortMapDoubleCharacters);
-
         }
-        catch (IOException e) {
-            throw new RuntimeException();
-        }
+
+        final Map<String, Integer> sortMapDoubleCharacters = new LinkedHashMap<>();
+        mapDoubleCharacters.entrySet().stream()
+                 .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                 .forEachOrdered(x -> sortMapDoubleCharacters.put(x.getKey(), x.getValue()));
+
+        final Map<String, Integer> encodedSortMapDoubleCharacters = new LinkedHashMap<>();
+        encodedMapDoubleCharacters.entrySet().stream()
+                           .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                           .forEachOrdered(x -> encodedSortMapDoubleCharacters.put(x.getKey(), x.getValue()));
+//        реализовать замену двухбуквенных сочитаний
+//        String[] strArray = encodedText;
+//        for (int k = 0; k < charArray.length; k++) {
+//            for (int m = 0; m < chars.size(); m++) {
+//                if (charArray[k] == charsEncoded.get(m)) {
+//                    charArray[k] = chars.get(m);
+//                    break;
+//                }
+//            }
+//        }
+
+        //System.out.println(sortMapDoubleCharacters);
+
     }
 
     private static void countCharacters(String text, File file) throws IOException {
